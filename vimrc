@@ -6,6 +6,7 @@ set number                      " switch line numbering
 
 "" Pathogen plugin
 call pathogen#infect()
+call pathogen#helptags()
 
 "" Default Whitespace
 set nowrap                      " don't wrap lines
@@ -36,4 +37,3 @@ let mapleader=","               " Replace the leader from \ to ,
 "" Maps
 " Edit vimrc in a tab
 nmap <leader>v :tabedit $MYVIMRC<CR>
-
