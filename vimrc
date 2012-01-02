@@ -3,6 +3,7 @@ syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " switch line numbering
+let mapleader=","               " Replace the leader from \ to ,
 
 "" Pathogen plugin
 call pathogen#infect()
@@ -32,8 +33,13 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase smartcase        " searches are case insensitive unless they contain at least one capital letter
 
-let mapleader=","               " Replace the leader from \ to ,
-
+"" Plugin clang_complete
+let g:clang_complete_auto = 1   " Enable auto popup, use <Tab> to autocomplete
+let g:clang_complete_copen = 1  " Show clang errors in the quickfix window
+ 
+" Plugin supertab
+let g:SuperTabDefaultCompletionType = "context"
+ 
 "" Maps
 " Edit vimrc in a tab
 nmap <leader>v :tabedit $MYVIMRC<CR>
