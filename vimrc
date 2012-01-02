@@ -4,6 +4,9 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " switch line numbering
 
+"" Pathogen plugin
+call pathogen#infect()
+
 "" Default Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=4 shiftwidth=4      " a tab is two spaces (or set this to 4)
