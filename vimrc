@@ -2,7 +2,7 @@ set nocompatible                " Choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-set number                      " switch line numbering
+set relativenumber              " switch line numbering
 let mapleader=","               " Replace the leader from \ to ,
 
 "" Load vim-plug (plugin manager) and all its plugins
@@ -28,6 +28,8 @@ filetype on
 filetype plugin on
 " Syntax of these languages is fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+" Wrap long lines in text files
+autocmd FileType text setlocal wrap linebreak
 " If vimrc file is written, apply the changes
 autocmd BufWritePost .vimrc source $MYVIMRC
 
@@ -83,4 +85,6 @@ nmap <leader><leader> <C-w>w
 nmap <leader>n :NERDTreeToggle<CR>
 " Search current word in project files
 nnoremap <leader>f :grep! "\b<C-R><C-W>\b"<CR>
+" Write date
+nnoremap <leader>d :r! date "+\%Y/\%m/\%d"<CR>A
 
